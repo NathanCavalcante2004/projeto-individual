@@ -1,0 +1,19 @@
+*{
+    margin: auto;
+    padding: auto
+    ;
+}
+body{
+    background-color: black;
+}
+.container_contato{
+    font-size: 3vw;
+    color:white;
+}
+.container_pai{
+    width:80%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
