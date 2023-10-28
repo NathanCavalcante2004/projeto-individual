@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pele.css">
+</head>
+<body>
+  <div class="imagem">
+
+      <div class="container_pai">
+          <div class="container_opacidade">
+              <img  class="container_santos" src="image/Santos_Logo.png">
+              <h1 class="container_h1">REVERENCIA AO REI!</h1>
+              <p class="container_paragrafo">Edson Arantes do Nascimento, mais conhecido como Pelé, é uma das figuras mais icônicas e influentes do mundo do futebol e do esporte em geral. Nascido em 23 de outubro de 1940, na cidade de Três Corações, no Brasil, Pelé conquistou o coração dos fãs de futebol em todo o mundo com sua habilidade excepcional e 
+                conquistas impressionantes.
+                Pelé começou a jogar futebol muito jovem e, aos 16 anos, já estava brilhando como profissional no Santos FC. Sua carreira foi marcada por uma série de recordes e conquistas notáveis. Ele é amplamente considerado um dos maiores jo
+                gadores de futebol de todos os tempos e, para muitos, o próprio símbolo do esporte.</p>
+            </div>
+            
+        </div>
+    </div>
+    </body>
+    <div class="container_outroPai">
+        <div class="filha">
+
+            <p class="class_h1">Titulos Ao Longo Da Carreira No Santos</p>
+            <button onclick="resultado()" class="botao">Titulos</button>
+            <div id="mostrar"></div>
+        </div>
+    </div>
+</html>
+<script>
+    function resultado(){
+        var titulos = ["Mundial de Clubes: 1963 e 1963<br>","Taça Libertadores: 1962 e 1963<br>","Recopa Sul-Americana: 1968<br>","Recopa Mundial: 1968<br>","Campeonato Brasileiro: 1961, 1962, 1963, 1964, 1965 e 1968 <br>","Torneio Rio-São Paulo: 1959, 1963, 1964 e 1966 <br>","Campeonato Paulista: 1958, 1960, 1961, 1962, 1964, 1965, 1967, 1968, 1969 e 1973 <br>","Troféu Mário Echandi (Costa Rica): 1959 .<br>","Torneio Pentagonal do México: 1959<br>","Troféu Tereza Herrera (Espanha): 1959<br>","Torneio de Valência (Espanha): 1959<br>","Troféu de Gialorosso (Itália): 1960 <br>","Torneio de Paris (França): 1960 e 1961<br>","Torneio Triangular da Costa Rica: 1961 <br>","Torneio Pentagonal de Gadalajara (México): 1961<br>","Torneio Itália: 1961 <br>","Torneio Hexagonal do Chile: 1965 e 1970<br>","Torneio de Caracas (Venezuela): 1965<br>","Torneio Quadrangular de Buenos Aires (Argentina): 1965<br>","Torneio de Nova York<br>","orneio Triangular de Florença (Itália): 1967<br>","Torneio da Amazônia: 1968 <br>","Torneio Octagonal do Chile: 1968<br>","Torneio Pentagonal de Buenos Aires <br>","Torneio de Cuiabá: 1969<br>"]
+        mostrar.innerHTML=``
+        for(var contador = 0; contador<= titulos.length; contador ++ ){
+            mostrar.innerHTML+=`<br><span style= height:100vw;margin-left:-10vw;color:white;font-size:2vw;>${titulos.toString()}<br>`
+                break
+        }
+    
+    }
+    </script>

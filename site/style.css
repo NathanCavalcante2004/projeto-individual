@@ -2,6 +2,10 @@
     margin:auto;
     padding: auto;
 }
+a{
+   text-decoration: none;
+   color:white;
+}
 
 .container_pai{
     height: 15vh;
