@@ -15,19 +15,18 @@ body{
 }
 .container_h1{
     color:white;
-    margin-top:5vw;
+    margin-top:2vw;
 }
 .container_opacidade{
-    margin-top:37vw;
+    margin-top:40vw;
     margin-left: 2vw;
-   width:99vw;
-   height: 93vh;
-    background-color: rgba(0, 0, 0, 0.368);
-    opacity: 0.9;
+   width:103vw;
+   height: 101vh;
+    background-color: rgba(0, 0, 0, 0.689);
 }
 .container_paragrafo{
     color:white;
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     width: 50vw;
 }
 .container_santos{
@@ -54,7 +53,7 @@ body{
 .botao{
   width:40vw;
     height: 5vw;  
-     margin-left:3vw;  
+    margin-left:4vw;
      font-size:2vw;
     
 }
