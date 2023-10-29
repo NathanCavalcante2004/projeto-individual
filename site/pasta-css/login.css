@@ -1,0 +1,21 @@
+.container_pai{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:20%;
+    height: 80vh;
+}
+.container_filho{
+    border:solid 0.5vw;
+    width:150%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ul{
+    list-style: none;
+}
+button{
+    display: flex;
+}

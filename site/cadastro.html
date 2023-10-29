@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    <div class="container_pai">
+        <div class="container_filho">
+
+            <ul>
+                <li>Nome</li>
+                <input id="container_nome">
+                <li>Telefone</li>
+                <input id="container_telefone">
+                <li>Idade</li>
+                <input id="container_idade">
+                <li>Endereço</li>
+                <input id="container_endereço">
+            <li>Cpf</li>
+            <input id="container_cpf">
+            <li>Cep</li>
+            <input id="container_cep">
+            <li>Email</li>
+            <input id="container_email">
+            <div class="botao">
+
+                <button  class="" onclick="resultado()">Cadastro</button>
+            </div>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    function resultado(){
+        var nome = container_nome.value;
+        var telefone = Number(container_telefone.value);
+        var idade = Number(container_idade.value);
+        var endereço = container_endereço.value
+        var cpf =  Number(container_cpf.value)
+        var cep = Number(container_cep.value)
+        var email = container_email.value
+
+
+        
+    }
+</script>
