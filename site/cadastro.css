@@ -1,35 +1,139 @@
-.container_pai{
-    width:100%;
+
+body {
+    width: 95vw;
     height: 90vh;
+    background-color:black;
+    background-size: cover;
+    font-family: monospace;
+    
+}
+/* blur(5px */
+form {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
-}
-.container_filho{
-border:solid 0.3vw;
-width: 25vw;
-height: 60vh;
+    justify-content: space-between;
+    align-items: flex-end;
 
 }
-ul{
-    list-style: none;
-    display: block;
-  
-    
-    
+
+
+/* 1 - somente a direita da input 
+   2 - somente embaixo
+   3 - sombra input inteira proporcionalmente
+   4 - tamanho da borda
+*/
+.caixa_um {
+    /*  border: 3px solid red;  */
+    height: 88vh;
+    width: 50vw;
+    margin-left:22.5vw;
+    margin-top:3vw;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 5%;
 }
-input{
-width: 20vw;
-height: 3vh;
-border-radius: 2vw;
-}
-button{
- margin-top:2vw;
- margin-left:-2vw;
- width: 95%;
- height: 6vh;
-}
-.botao{
+
+
+input {
+    margin-bottom: 0%;
+    height: 12.5%;
+    border-radius: 20px;
+    width: 60%;
+    border: 0px solid;
+    background-color: #d6d6d600;
+    outline: 0;
+    color: white;
+    padding-left: 2%;
     text-align: center;
+    box-shadow:#cfcfcf 5px 5px 10px 0px ,#897e7e -5px -5px 10px 0px;
 }
+.logo_cad {
+    width: 10%;
+    position: absolute;
+    left: 45%;
+    top: 30%;
+}
+
+.titulo {
+    position: absolute;
+    top: -4%;
+    left: 37.5%;
+    font-size: 43px;
+}
+
+button {
+    position: absolute;
+    top: 100%;
+    left: 33.5%;
+    width: 30%;
+    height: 10%;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 2px solid #ffffff;
+    background-color:black;
+    font-family: monospace;
+    font-size: 17px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+button:hover {
+    /* background-image: url(../imgs/botao.png);
+    background-size: cover; */
+    transition: 0.5s;
+    letter-spacing: 2px;
+    color: red;
+    font-family: monospace;
+    /* font-size: 21px;
+    font-weight: bold; */
+}
+
+p {
+    color: #cfcfcf;
+    font-size: 20px;
+    margin-bottom: 1.5%;
+}
+
+#input_nome::placeholder {
+    color: #ffffff;
+}   
+
+#input_usuario::placeholder {
+    color: #ffffff;
+}   
+
+#input_idade::placeholder {
+    color: #ffffff;
+    
+}
+
+#input_email::placeholder {
+    color: #ffffff;
+    
+}
+
+#input_senha::placeholder {
+    color: #ffffff;
+    
+}
+
+#input_confirmar_senha::placeholder {
+    color: #ffffff;
+    
+}
+
+#input_estado::placeholder {
+    color: #ffffff;
+    
+}
+
+#input_cep::placeholder {
+    color: #ffffff;
+}
+

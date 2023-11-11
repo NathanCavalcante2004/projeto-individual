@@ -3,48 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastrar</title>
     <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
-    <div class="container_pai">
-        <div class="container_filho">
-
-            <ul>
-                <li>Nome</li>
-                <input id="container_nome">
-                <li>Telefone</li>
-                <input id="container_telefone">
-                <li>Idade</li>
-                <input id="container_idade">
-                <li>Endereço</li>
-                <input id="container_endereço">
-            <li>Cpf</li>
-            <input id="container_cpf">
-            <li>Cep</li>
-            <input id="container_cep">
-            <li>Email</li>
-            <input id="container_email">
-            <div class="botao">
-
-                <button  class="" onclick="resultado()">Cadastro</button>
-            </div>
-        </ul>
-    </div>
+    <body>
+       
+        <div id="caixa_login" class="caixa_login">
+            <form>
+                <p class="titulo">CRIE SUA CONTA!</p>
+                <div class="caixa_um">
+                    
+                    <p>Nome:</p>
+                    <input placeholder="Nathan Cavalcante" id="input_nome">
+                        <p>Idade:</p>
+                        <input id="input_idade" placeholder="+12">
+                        <p>Email:</p>
+                        <input id="input_email" placeholder="nathan@.com">
+                        <p>Senha:</p>
+                        <input id="input_senha" placeholder="*******">
+                            <p>Confirmar senha:</p>
+                            x<input id="input_confirmar_senha" placeholder="*******">
+                            <p>CEP:</p>
+                            <input id="input_cep" placeholder="08450-320">
+                </div>
+                </div>
+                <div>
+                    <button type="button" id="botao" onclick="cadastrar()">
+                        CADASTRAR!
+                    </button>
+                </div>
+            </form>
+        </div>
+    </body>
 </div>
 </body>
 </html>
 <script>
-    function resultado(){
-        var nome = container_nome.value;
-        var telefone = Number(container_telefone.value);
-        var idade = Number(container_idade.value);
-        var endereço = container_endereço.value
-        var cpf =  Number(container_cpf.value)
-        var cep = Number(container_cep.value)
-        var email = container_email.value
+    function cadastrar(){
+        var nome = input_nome.value;
+        var idade = Number(input_idade.value);
+        var email = input_email.value;
+        var senha = input_senha.value;
+        var confirmarSenha = input_confirmar_senha.value;
+        var cep = Number(input_cep.value);
+        var validacoes = 0;
 
 
+        if (nome == "" || email == "" || senha == "" || confirmarSenha == "" || 
+         idade == "" || cep == "" ) {
+            alert('erro: preencha todos os campos')
+            
+        }else{
+            validacoes++
+
+        }if(nome.length > 12){
+            alert('erro:Nome grande demais')
+        }
+        else if(nome.length < 2){
+            alert('erro:Nome pequeno demais')
+        }
+        else{
+            validacoes++
+        }
+        if(email.indexOf("@") <= -1){
+            alert('erro:Coloque @ no seu email')
+        }else if(email.indexOf(".")== -1){
+            alert('erro:Coloque . no seu email')
+        }else{
+            validacoes++
+        }
+        if(idade <= 13){
+            alert('Idade invalida')
+        }else{
+            validacoes++
+        }
         
     }
 </script>

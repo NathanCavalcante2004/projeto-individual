@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
 *{
     margin: auto;
-    padding: auto
+    padding: auto;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900
     ;
+}
+.container_santos{
+    width:6vw;
+    margin-top:1vw;
+
+
 }
 body{
     background-color: black;
@@ -11,9 +21,31 @@ body{
     color:white;
 }
 .container_pai{
-    width:80%;
-    height: 50vh;
+    width: 80vw;
+    height: 40vw;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 900;
+    margin-top:-5vw;
+}
+input{
+width: 40vw;
+height: 5vw;
+border-radius: 2vw;
+font-weight: 900;
+}
+.container_paragrafo{
+    color:white;
+    font-size:2vw;
+    width: 50vw;;
+    font-weight: 700;
+}
+button{
+    width:40vw;
+    height: 4vw;
+    border-radius: 20vw;
+    background-color: white;
+    color:black;
 }
