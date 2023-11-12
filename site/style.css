@@ -36,9 +36,10 @@ a{
     background-image:url(image/Santos_Logo.png); 
 }
 .container_texto{
-    width:80%;
+    width:85%;
     display:flex;
     margin-top:3vw;
+    
 }
 .container_filho{
     width:80%;
@@ -52,6 +53,7 @@ a{
     font-size: 1.6vw;
     color:white;
     width:50vw;
+    margin-left:26vw;
     
 
 }
