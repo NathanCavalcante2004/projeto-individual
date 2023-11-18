@@ -4,100 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/historico.css">
+    <link rel="stylesheet" href="historia.css">
 </head>
 <body>
+    <a href="index.html"><img onclick="clicar()"class="container_santos" src="image/Santos_Logo.png"></a>
+    <h1>Todos Titulos</h1>
     <div class="container_pai">
-        <div class="container_filho">
-            <h1 class="titulo">Nascer Viver e No Santos Morrer!</h1>
-            <h2 class="titulo2">ultimo time campeao da libertadores</h2>
+        <div class="container_image">
+
+            <img class="liberta" src="image/liberta.jpg">
+            <img class="mundial" src="image/mundi.jpg">
         </div>
-    </div>
-    <div class="container_funcional">
-        <a href="index.html"><img onclick="clicar()"class="container_santos" src="image/Santos_Logo.png"></a>
-        <p>Pesquise Uma Posição</p>
-        <input id="container_input">
-        <button onclick="resultado()">Jogador</button>
-        <button onclick="elenco()">elenco</button>
-        <div id="mostrar"></div> 
-        <div id="outro"></div>
+        <p>
 
-    </div>
-</body>
+            Títulos Internacionais:<br>
+            
+            Copa Libertadores da América: 1962, 1963, 2011<br>
+            Copa Intercontinental: 1962, 1963<br>
+            Títulos Nacionais:<br>
+            
+            Campeonato Brasileiro Série A: 1961, 1962, 1963, 1964, 1965, 1968, 2002, 2004<br>
+            Copa do Brasil: 2010<br>
+            Supercopa Libertadores: 1968<br>
+            Títulos Regionais (Campeonato Paulista):<br>
+            O Santos é um dos clubes mais vitoriosos no Campeonato Paulista, e conquistou o título em várias ocasiões, incluindo nas décadas de 1930, 1940, 1950, 1960, 1970, 1980, 2000 e 2010.<br>
+            
+            Outros Títulos:<br>
+            
+            Recopa Sul-Americana: 1968, 1969, 2012<br>
+            Taça Brasil: 1961, 1962, 1963, 1964<br>
+            Torneio Rio-São Paulo: 1959<br>
+            </p>
+
+        </div>
+        <p class="container_paragrafo">Ultimo titulo do santos</p>
+        <p class="container_paragrafo">quantos anos voce tem</p>
+        <input id="container_conta">
+        <button onclick="resultado()">Conta</button>
+    </body>
 </html>
+
 <script>
-    var jogadores = ["image/goleiro.jpg","image/lateralDireito.jpg","image/leo.jpg","image/eedu.jpg","image/durval.jpg","image/arouca.jpg","image/elano.jpg","image/ganso.jpg","image/adriano.webp","image/ney.jpg","image/zelove.jpg"]
-
     function resultado(){
-        var input = container_input.value
-        mostrar.innerHTML=``
+        var conta = Number(container_conta.value);
+        var resultado =  conta-(2023 - 2011) 
+        alert(`voce tinha ${resultado} anos desde a ultima vez que o santos venceu a libertadores! um clube desse tamanho nao pode ficar tanto tempo sem vencer `)
+
         
-            if(input == "goleiro" ){
-                
-                mostrar.innerHTML=`<img src=${jogadores[0]} width="200px" height= "200px">`
-            }
-            
-            else if(input == "lateral direito" ){
-    
-                mostrar.innerHTML=`<img src=${jogadores[1]} width="200px" height= "200px">`
-            }
-            
-            else if(input == "lateral esquerdo" ){
-                
-                mostrar.innerHTML=`<img src=${jogadores[2]} width="200px" height= "200px">`
-            }
 
-            else if(input == "zagueiro esquerdo" ){
-                
-                 mostrar.innerHTML=`<img src=${jogadores[3]} width="200px" height= "200px">`
-                }
-                
-                else if(input == "zagueiro direito" ){
-                    
-                    mostrar.innerHTML=`<img src=${jogadores[4]} width="200px" height= "200px">`
-                }
-                
-                else if(input == "volante" ){
-                    
-                    mostrar.innerHTML=`<img src=${jogadores[5]} width="200px" height= "200px">`
-                }  
-                
-                else if(input == "segundo volante" ){
-                    
-                    mostrar.innerHTML=`<img src=${jogadores[6]} width="200px" height= "200px">`
-                } 
-            
-           else if(input == "meia atacante" ){
-    
-               mostrar.innerHTML=`<img src=${jogadores[7]} width="200px" height= "200px">`
-            } 
 
-            else if(input == "meio" ){
-    
-                mostrar.innerHTML=`<img src=${jogadores[8]} width="200px" height= "200px">`
-            } 
-            
-            else if(input == "atacante" ){
-                
-                mostrar.innerHTML=`<img src=${jogadores[9]} width="200px" height= "200px">`
-            } 
-            
-            else if(input == "centroavante" ){
-                
-                mostrar.innerHTML=`<img src=${jogadores[10]} width="200px" height= "200px">`
-            }
-            else{alert('essa posição nao existe')}  
-        }
-    
-
-    function elenco(){  
-        outro.innerHTML=``
-        for(var contador = 0; contador <jogadores.length; contador++){
-            outro.innerHTML+=`<div class="card"><img src=${jogadores[contador]} width="100px" height= "100px">
-            <button onclick="votar()"class="votar">votar</button></div>`
-        }
-    }
-    function votar(){
-        
     }
 </script>

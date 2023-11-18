@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+
+body{
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5vh;
+    font-weight: 900;
+}
+p{
+    color: white;
+    margin-left:11vw;
+    margin-top:-10vw;
+}
+.container_pai{
+    width:60vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:20vw;
+    margin-top:8vw;
+}
+.liberta{
+    width:50vh;
+    margin-top:-2vw;
+}
+.mundial{
+    width:50vh;
+    margin-top:2vw;
+
+}
+.container_image{
+    display: flex;
+    flex-direction: column;
+    margin-left:-15vw;
+    margin-top:-5vw;
+    
+}
+h1{
+    color:white;
+    margin-left:40vw;
+    margin-top:-5vw;
+}
+.container_paragrafo{
+    margin-left:40vw;;
+    margin-top:-1vw;
+}
+#container_conta{
+    
+        margin-left:40vw;;
+        margin-top:-1vw;
+
+}
+.container_santos{
+    width:6vw;
+    margin-top:1vw;
+
+
+}

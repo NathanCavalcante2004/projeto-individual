@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/titulo.css">
+</head>
+<body>
+    <div class="container_pai">
+        <div class="container_filho">
+            <h1 class="titulo">Nascer Viver e No Santos Morrer!</h1>
+            <h2 class="titulo2">ultimo time campeao da libertadores</h2>
+        </div>
+    </div>
+    <div class="container_funcional">
+        <a href="index.html"><img onclick="clicar()"class="container_santos" src="image/Santos_Logo.png"></a>
+        <p>Pesquise Uma Posição</p>
+        <input id="container_input">
+        <button onclick="resultado()">Jogador</button>
+        <button onclick="elenco()">elenco</button>
+        <div id="mostrar"></div> 
+        <div id="outro"></div>
+
+    </div>
+</body>
+</html>
+<script>
+    var jogadores = ["image/goleiro.jpg","image/lateralDireito.jpg","image/leo.jpg","image/eedu.jpg","image/durval.jpg","image/arouca.jpg","image/elano.jpg","image/ganso.jpg","image/adriano.webp","image/ney.jpg","image/zelove.jpg"]
+
+    function resultado(){
+        var input = container_input.value
+        mostrar.innerHTML=``
+        
+            if(input == "goleiro" ){
+                
+                mostrar.innerHTML=`<img src=${jogadores[0]} width="200px" height= "200px">`
+            }
+            
+            else if(input == "lateral direito" ){
+    
+                mostrar.innerHTML=`<img src=${jogadores[1]} width="200px" height= "200px">`
+            }
+            
+            else if(input == "lateral esquerdo" ){
+                
+                mostrar.innerHTML=`<img src=${jogadores[2]} width="200px" height= "200px">`
+            }
+
+            else if(input == "zagueiro esquerdo" ){
+                
+                 mostrar.innerHTML=`<img src=${jogadores[3]} width="200px" height= "200px">`
+                }
+                
+                else if(input == "zagueiro direito" ){
+                    
+                    mostrar.innerHTML=`<img src=${jogadores[4]} width="200px" height= "200px">`
+                }
+                
+                else if(input == "volante" ){
+                    
+                    mostrar.innerHTML=`<img src=${jogadores[5]} width="200px" height= "200px">`
+                }  
+                
+                else if(input == "segundo volante" ){
+                    
+                    mostrar.innerHTML=`<img src=${jogadores[6]} width="200px" height= "200px">`
+                } 
+            
+           else if(input == "meia atacante" ){
+    
+               mostrar.innerHTML=`<img src=${jogadores[7]} width="200px" height= "200px">`
+            } 
+
+            else if(input == "meio" ){
+    
+                mostrar.innerHTML=`<img src=${jogadores[8]} width="200px" height= "200px">`
+            } 
+            
+            else if(input == "atacante" ){
+                
+                mostrar.innerHTML=`<img src=${jogadores[9]} width="200px" height= "200px">`
+            } 
+            
+            else if(input == "centroavante" ){
+                
+                mostrar.innerHTML=`<img src=${jogadores[10]} width="200px" height= "200px">`
+            }
+            else{alert('essa posição nao existe')}  
+        }
+    
+
+    function elenco(){  
+        outro.innerHTML=``
+        for(var contador = 0; contador <jogadores.length; contador++){
+            outro.innerHTML+=`<div class="card"><img src=${jogadores[contador]} width="100px" height= "100px">
+            <button onclick="votar()"class="votar">votar</button></div>`
+        }
+    }
+    function votar(){
+        
+    }
+</script>
