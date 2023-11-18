@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<form>
+<body>
+
+    <div class="container_pai">
+        <div class="container_filho">
+            
+            <ul>
+                <li>Email</li>
+                <input id="container_email">
+                <li>Senha</li>
+                <input id="container_senha">
+                <button type="button" onclick="entrar()">Login</button>
+            </ul>
+        </div>
+    </div>
+</body>
+</form>
+</html>
+<script>
+    function entrar() {
+
+var emailVar = container_email.value;
+var senhaVar = container_senha.value;
+
+if (emailVar == "" || senhaVar == "") {
+    alert('Preencha todos os campos')
+}
+else {
+
+fetch("/usuarios/autenticar", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        emailServer: emailVar,
+        senhaServer: senhaVar
+    })
+}).then(function (resposta) {
+    console.log("ESTOU NO THEN DO entrar()!")
+
+    if (resposta.ok) {
+        console.log(resposta);
+
+        resposta.json().then(json => {
+            console.log(json);
+            console.log(JSON.stringify(json));
+
+
+
+            setTimeout(function () {
+                window.location.assign("historia.html")
+            }, 1000); // apenas para exibir o loading
+
+        });
+
+    } else {
+
+        console.log("Houve um erro ao tentar realizar o login!");
+
+        resposta.text().then(texto => {
+            console.error(texto);
+        });
+    }
+
+}).catch(function (erro) {
+    console.log(erro);
+})
+
+
+}
+}
+
+</script>

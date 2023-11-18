@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body>
+    <body>
+       
+        <div id="caixa_login" class="caixa_login">
+            <form>
+                <p class="titulo">CRIE SUA CONTA!</p>
+                <div class="caixa_um">
+                    <p>Nome:</p>
+                    <input placeholder="Nathan Cavalcante" id="input_nome">
+                        <p>Idade:</p>
+                        <input id="input_idade" placeholder="+12">
+                        <p>Email:</p>
+                        <input id="input_email" placeholder="nathan@.com">
+                        <p>Senha:</p>
+                        <input id="input_senha" placeholder="*******">
+                            <p>Confirmar senha:</p>
+                            x<input id="input_confirmar_senha" placeholder="*******">
+                            <p>CEP:</p>
+                            <input id="input_cep" placeholder="08450-320">
+                </div>
+                </div>
+                <div>
+                    <button type="button" id="botao" onclick="cadastrar()">
+                        CADASTRAR!
+                    </button>
+                </div>
+            </form>
+        </div>
+    </body>
+</div>
+</body>
+</html>
+<script>
+    function cadastrar(){
+        var nomeVar = input_nome.value;
+        var idadeVar = Number(input_idade.value);
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+        var confirmarSenhaVar = input_confirmar_senha.value;
+        var cepVar = Number(input_cep.value);
+        var validacoes = 0;
+
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmarSenhaVar == "" || 
+         idadeVar == "" || cepVar == "" ) {
+            alert('erro: preencha todos os campos')
+            
+        }else{
+            validacoes++
+
+        }if(nomeVar.length > 12){
+            alert('erro:Nome grande demais')
+        }
+        else if(nomeVar.length < 2){
+            alert('erro:Nome pequeno demais')
+        }
+        else if(senhaVar != confirmarSenhaVar){
+            alert("as senhas precisam ser igual")
+        }
+        else{
+            validacoes++
+        }
+        if(emailVar.indexOf("@") <= -1){
+            alert('erro:Coloque @ no seu email')
+        }else if(emailVar.indexOf(".")== -1){
+            alert('erro:Coloque . no seu email')
+        }else{
+            validacoes++
+        }
+        if(idadeVar <= 13){
+            alert('Idade invalida')
+        }else{
+            validacoes++
+        }
+
+        
+        if(validacoes == 4) {
+
+// Enviando o valor da nova input
+fetch("/usuarios/cadastrar", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+},
+body: JSON.stringify({
+    // crie um atributo que recebe o valor recuperado aqui
+    // Agora vá para o arquivo routes/usuario.js
+    nomeServer: nomeVar,
+    emailServer: emailVar,
+    idadeServer: idadeVar,
+    senhaServer: senhaVar,
+    cepServer: cepVar,
+})
+}).then(function (resposta) {
+
+console.log("resposta:", resposta);
+
+if (resposta.ok) {
+    setTimeout(() => {
+        window.location = "login.html";
+    }, "2000")
+
+
+} else {
+    throw ("Houve um erro ao tentar realizar o cadastro!");
+}
+}).catch(function (resposta) {
+
+});
+
+}
+        
+    }
+</script>

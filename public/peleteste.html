@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/peleteste.css">
+</head>
+<body>
+    <div>
+        <a href="index.html"><img onclick="clicar()"class="container_santos" src="image/Santos_Logo.png"></a>
+        <div class="filho">
+
+            
+            
+            <h1>Revença Ao Rei!</h1>
+            <p>Pelé, também conhecido como Edson Arantes do Nascimento, é uma lenda viva do futebol e uma das figuras esportivas mais icônicas da história. Nascido em 1940 no Brasil, ele cresceu em um contexto humilde e rapidamente se destacou no mundo do futebol. Pelé é reverenciado por suas habilidades excepcionais como jogador e pela capacidade de marcar gols espetaculares que cativaram o mundo.
+
+                Ele passou a maior parte de sua carreira no Santos Futebol Clube, onde conquistou inúmeros títulos e estabeleceu uma reputação como um dos maiores atacantes de todos os tempos. Além disso, Pelé teve uma breve passagem pelo New York Cosmos nos Estados Unidos, o que contribuiu para popularizar o esporte nos EUA.
+                
+                Uma das maiores façanhas de Pelé foi seu sucesso na seleção brasileira. Ele representou o Brasil em quatro Copas do Mundo e foi parte integrante da equipe que conquistou o título em 1958, 1962 e 1970. Seu desempenho notável e sua liderança em campo o tornaram uma figura reverenciada no cenário do futebol internacional.
+                
+                Pelé também é conhecido por sua impressionante contagem de gols, tendo marcado mais de 1.000 gols durante sua carreira profissional, um feito extraordinário que permanece inigualável. Além de suas habilidades no campo, ele é admirado por sua humildade e carisma, tornando-se um embaixador global do esporte e um exemplo inspirador para gerações futuras.
+                
+                </p>
+                <button onclick="quantidade()"> quantidade titulos</button>
+                <button onclick="resultado()">TITULOS</button>
+            </div>
+            <div class="container_pai">
+                <img  src="image/peles.jpg">
+                <img src="image/pele.jpg">
+            </div>
+        </div>
+        <div id="mostrar"></div>
+        <div id="outro"></div>
+    </body>
+</html>
+
+<script>
+    var titulos = ["<br>Mundial de Clubes: 1963 e 1963<br>","Taça Libertadores: 1962 e 1963<br>","Recopa Sul-Americana: 1968<br>","Recopa Mundial: 1968<br>","Campeonato Brasileiro: 1961, 1962, 1963, 1964, 1965 e 1968 <br>","Torneio Rio-São Paulo: 1959, 1963, 1964 e 1966 <br>","Campeonato Paulista: 1958, 1960, 1961, 1962, 1964, 1965, 1967, 1968, 1969 e 1973 <br>","Troféu Mário Echandi (Costa Rica): 1959 .<br>","Torneio Pentagonal do México: 1959<br>","Troféu Tereza Herrera (Espanha): 1959<br>","Torneio de Valência (Espanha): 1959<br>","Troféu de Gialorosso (Itália): 1960 <br>","Torneio de Paris (França): 1960 e 1961<br>","Torneio Triangular da Costa Rica: 1961 <br>","Torneio Pentagonal de Gadalajara (México): 1961<br>","Torneio Itália: 1961 <br>","Torneio Hexagonal do Chile: 1965 e 1970<br>","Torneio de Caracas (Venezuela): 1965<br>","Torneio Quadrangular de Buenos Aires (Argentina): 1965<br>","Torneio de Nova York<br>","orneio Triangular de Florença (Itália): 1967<br>","Torneio da Amazônia: 1968 <br>","Torneio Octagonal do Chile: 1968<br>","Torneio Pentagonal de Buenos Aires <br>","Torneio de Cuiabá: 1969<br>"]
+    function resultado(){
+        
+        outro.innerHTML=``
+        for(var contador = 0; contador<= titulos.length; contador ++ ){
+            outro.innerHTML+=`<br><span style=color:white;font-size:2vw${titulos.join("")}<br>`
+                
+                break
+        }
+    
+    
+}
+    function quantidade(){
+        mostrar.innerHTML=``
+        for(var contador = 1; contador<= titulos.length; contador ++ ){
+            mostrar.innerHTML=`<br><span style=color:white;font-size:2vw;>${contador } Titulos <br>`
+                
+        }
+
+
+    }
+
+    </script>

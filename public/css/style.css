@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+*{
+    margin:auto;
+    padding: auto;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+a{
+   text-decoration: none;
+   color:white;
+}
+
+.container_pai{
+    height: 15vh;
+    background-color: black;
+    
+}
+.div_lista{
+    
+}
+.container_lista{
+    width:80%;
+    height: 15vh;
+    color:white;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-size: 1.2vw;
+    list-style-type:none;
+}
+
+.container_santos{  
+    width:6vw;
+    margin-left:-5vw;
+    margin-top:vw;   
+    background-image:url(../image/Santos_Logo.png); 
+}
+.container_texto{
+    width:85%;
+    display:flex;
+    margin-top:3vw;
+    
+}
+.container_filho{
+    width:80%;
+    margin-top:10vw;   
+}
+.container_titulo{
+ color: white;
+ margin-top:vw;
+}
+.container_paragrafo{
+    font-size: 1.6vw;
+    color:white;
+    width:50vw;
+    margin-left:26vw;
+    
+
+}
+.container_h1{
+    color:white;
+    width: 50%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container_filho{
+    background-image: url(../image/vila_belmiro_2015_a_pb.jpg);
+    width:100vw;
+    height: 85vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top:-3vw;
+     
+}
+.opacidade{
+ width:100%;
+ height: 80vh;
+ background-color: black;
+ opacity: 0.8;
+}
