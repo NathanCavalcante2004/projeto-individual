@@ -1,3 +1,7 @@
+body{
+    background-image: url("../image/liberta.jpg");
+}
+
 .container_pai{
     display: flex;
     align-items: center;

@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Titulos</title>
     <link rel="stylesheet" href="css/titulo.css">
+    <link rel="icon" href="image/Santos_Logo.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.js"></script>
+    
 </head>
+
 <body>
     <div class="container_pai">
         <div class="container_filho">
@@ -13,91 +20,153 @@
             <h2 class="titulo2">ultimo time campeao da libertadores</h2>
         </div>
     </div>
+    <div id="alertas"></div>
     <div class="container_funcional">
-        <a href="index.html"><img onclick="clicar()"class="container_santos" src="image/Santos_Logo.png"></a>
+        <a href="index.html"><img onclick="clicar()" class="container_santos" src="image/Santos_Logo.png"></a>
         <p>Pesquise Uma Posição</p>
         <input id="container_input">
         <button onclick="resultado()">Jogador</button>
         <button onclick="elenco()">elenco</button>
-        <div id="mostrar"></div> 
+        <div id="mostrar"></div>
         <div id="outro"></div>
 
     </div>
 </body>
+
 </html>
+
 <script>
-    var jogadores = ["image/goleiro.jpg","image/lateralDireito.jpg","image/leo.jpg","image/eedu.jpg","image/durval.jpg","image/arouca.jpg","image/elano.jpg","image/ganso.jpg","image/adriano.webp","image/ney.jpg","image/zelove.jpg"]
+    var jogadores = ["null", "image/goleiro.jpg","image/lateralDireito.jpg", "image/leo.jpg", "image/eedu.jpg", "image/durval.jpg", "image/arouca.jpg", "image/elano.jpg", "image/ganso.jpg", "image/adriano.webp", "image/ney.jpg", "image/zelove.jpg"]
 
-    function resultado(){
+    function resultado() {
         var input = container_input.value
-        mostrar.innerHTML=``
-        
-            if(input == "goleiro" ){
-                
-                mostrar.innerHTML=`<img src=${jogadores[0]} width="200px" height= "200px">`
-            }
-            
-            else if(input == "lateral direito" ){
-    
-                mostrar.innerHTML=`<img src=${jogadores[1]} width="200px" height= "200px">`
-            }
-            
-            else if(input == "lateral esquerdo" ){
-                
-                mostrar.innerHTML=`<img src=${jogadores[2]} width="200px" height= "200px">`
-            }
+        mostrar.innerHTML = ``
 
-            else if(input == "zagueiro esquerdo" ){
-                
-                 mostrar.innerHTML=`<img src=${jogadores[3]} width="200px" height= "200px">`
-                }
-                
-                else if(input == "zagueiro direito" ){
-                    
-                    mostrar.innerHTML=`<img src=${jogadores[4]} width="200px" height= "200px">`
-                }
-                
-                else if(input == "volante" ){
-                    
-                    mostrar.innerHTML=`<img src=${jogadores[5]} width="200px" height= "200px">`
-                }  
-                
-                else if(input == "segundo volante" ){
-                    
-                    mostrar.innerHTML=`<img src=${jogadores[6]} width="200px" height= "200px">`
-                } 
-            
-           else if(input == "meia atacante" ){
-    
-               mostrar.innerHTML=`<img src=${jogadores[7]} width="200px" height= "200px">`
-            } 
-
-            else if(input == "meio" ){
-    
-                mostrar.innerHTML=`<img src=${jogadores[8]} width="200px" height= "200px">`
-            } 
-            
-            else if(input == "atacante" ){
-                
-                mostrar.innerHTML=`<img src=${jogadores[9]} width="200px" height= "200px">`
-            } 
-            
-            else if(input == "centroavante" ){
-                
-                mostrar.innerHTML=`<img src=${jogadores[10]} width="200px" height= "200px">`
-            }
-            else{alert('essa posição nao existe')}  
+        if (input == "Goleiro") {
+            mostrar.innerHTML = `<img src=${jogadores[1]} width="200px" height= "200px">`
         }
-    
 
-    function elenco(){  
-        outro.innerHTML=``
-        for(var contador = 0; contador <jogadores.length; contador++){
-            outro.innerHTML+=`<div class="card"><img src=${jogadores[contador]} width="100px" height= "100px">
-            <button onclick="votar()"class="votar">votar</button></div>`
+        if (input == "lateral direito") {
+            mostrar.innerHTML = `<img src=${jogadores[2]} width="200px" height= "200px">`
+        }
+
+        else if (input == "lateral esquerdo") {
+            mostrar.innerHTML = `<img src=${jogadores[3]} width="200px" height= "200px">`
+        }
+
+        else if (input == "zagueiro esquerdo") {
+            mostrar.innerHTML = `<img src=${jogadores[4]} width="200px" height= "200px">`
+        }
+
+        else if (input == "zagueiro direito") {
+            mostrar.innerHTML = `<img src=${jogadores[5]} width="200px" height= "200px">`
+        }
+
+        else if (input == "volante") {
+            mostrar.innerHTML = `<img src=${jogadores[6]} width="200px" height= "200px">`
+        }
+
+        else if (input == "segundo volante") {
+            mostrar.innerHTML = `<img src=${jogadores[7]} width="200px" height= "200px">`
+        }
+
+        else if (input == "meia atacante") {
+            mostrar.innerHTML = `<img src=${jogadores[8]} width="200px" height= "200px">`
+        }
+
+        else if (input == "meio") {
+            mostrar.innerHTML = `<img src=${jogadores[9]} width="200px" height= "200px">`
+        }
+
+        else if (input == "atacante") {
+            mostrar.innerHTML = `<img src=${jogadores[10]} width="200px" height= "200px">`
+        }
+
+        else if (input == "centroavante") {
+            mostrar.innerHTML = `<img src=${jogadores[11]} width="200px" height= "200px">`
+        }
+        else { alert('essa posição nao existe') }
+    }
+
+    function elenco() {
+        outro.innerHTML = ``
+        for (var contador = 1; contador <= 11; contador++) {
+            outro.innerHTML += `<div class="card"><img src=${jogadores[contador]} width="100px" height= "100px">
+            <button id="mensagem" onclick="agoraVai(${contador})"class="votar">votar</button></div>`
         }
     }
-    function votar(){
-        
+
+    var naosei = null;
+
+    function pegarVotacao(idJogador) {
+        var idJogadorVar = idJogador;
+
+        fetch(`/usuarios/pegarVotacao/${idJogadorVar}`,{cache:'no-store'} 
+            
+          ).then(function (resposta) {
+            resposta.json().then((historicos) => {
+                    historicos.forEach((dados) => {
+                    
+                        naosei = dados.qtdVotos;
+                    });
+                });
+        }).catch(function (erro) {
+            console.log(erro);
+        })
     }
+
+    function agoraVai(contador) {
+        // Gera o alerta da biblioteca sweet alert
+        Swal.fire('otimo!', 'Jogador votado com sucesso!', 'success')
+        
+        pegarVotacao(contador);
+
+        setTimeout(() => {
+            votar(contador, naosei);    
+        }, 100);
+    }
+
+        function votar(idJogador, naosei) {
+          
+            console.log((naosei));
+
+            var qtdVotosVar = naosei;
+            var idJogadorVar = idJogador;
+
+           var oi = Number(qtdVotosVar);
+        
+            if (idJogadorVar == 0) {
+                alert("Null")
+            } else {
+                fetch("/usuarios/votar", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        qtdVotosServer: oi,
+                        idJogadorServer: idJogadorVar
+                    })
+                }).then(function (resposta) {
+                    console.log("ESTOU NO THEN DO votar()!")
+
+                    if (resposta.ok) {
+                        console.log(resposta);
+
+                        resposta.json().then(json => {
+                            console.log(json);
+                            console.log(JSON.stringify(json));
+
+                           
+                        });
+                    } else {
+                        resposta.text().then(texto => {
+                            console.error(texto);
+                        });
+                    }
+                }).catch(function (erro) {
+                    console.log(erro);
+                })
+            }    
+}
 </script>

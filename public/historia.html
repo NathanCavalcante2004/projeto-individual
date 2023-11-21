@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Historia</title>
     <link rel="stylesheet" href="historia.css">
+    <link rel="icon" href="image/Santos_Logo.png">
 </head>
 <body>
     <a href="index.html"><img onclick="clicar()"class="container_santos" src="image/Santos_Logo.png"></a>
@@ -48,7 +49,13 @@
     function resultado(){
         var conta = Number(container_conta.value);
         var resultado =  conta-(2023 - 2011) 
-        alert(`voce tinha ${resultado} anos desde a ultima vez que o santos venceu a libertadores! um clube desse tamanho nao pode ficar tanto tempo sem vencer `)
+        if(resultado <= 0 ){
+            alert("voce ainda nao tinha nascido")
+        }
+        else{
+            alert(`voce tinha ${resultado} anos desde a ultima vez que o santos venceu a libertadores! um clube desse tamanho nao pode ficar tanto tempo sem vencer `)
+        }
+        
 
         
 

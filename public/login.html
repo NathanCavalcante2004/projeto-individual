@@ -1,82 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="icon" href="image/Santos_Logo.png">
 </head>
 <form>
-<body>
 
-    <div class="container_pai">
-        <div class="container_filho">
-            
-            <ul>
-                <li>Email</li>
-                <input id="container_email">
-                <li>Senha</li>
-                <input id="container_senha">
-                <button type="button" onclick="entrar()">Login</button>
-            </ul>
+    <body>
+
+        <div class="container_pai">
+            <div class="container_filho">
+
+                <ul>
+                    <li>Email</li>
+                    <input id="container_email">
+                    <li>Senha</li>
+                    <input id="container_senha">
+                    <button type="button" onclick="entrar()">Login</button>
+                </ul>
+            </div>
         </div>
-    </div>
-</body>
+
+    </body>
 </form>
+
 </html>
 <script>
-    function entrar() {
+    function mudanca_tela_login() {
 
-var emailVar = container_email.value;
-var senhaVar = container_senha.value;
-
-if (emailVar == "" || senhaVar == "") {
-    alert('Preencha todos os campos')
-}
-else {
-
-fetch("/usuarios/autenticar", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        emailServer: emailVar,
-        senhaServer: senhaVar
-    })
-}).then(function (resposta) {
-    console.log("ESTOU NO THEN DO entrar()!")
-
-    if (resposta.ok) {
-        console.log(resposta);
-
-        resposta.json().then(json => {
-            console.log(json);
-            console.log(JSON.stringify(json));
+        var imagem = ["image/mundi.jpg", "image/liberta.jpg", "image/reirei.webp", "image/torcedores-do-santos.jpg", "image/vila_belmiro_2015_a_pb.jpg"];
+        var computador = Math.floor(Math.random(1) * (6));
 
 
+        document.body.style.backgroundImage = imagem[computador];
 
-            setTimeout(function () {
-                window.location.assign("historia.html")
-            }, 1000); // apenas para exibir o loading
 
-        });
-
-    } else {
-
-        console.log("Houve um erro ao tentar realizar o login!");
-
-        resposta.text().then(texto => {
-            console.error(texto);
-        });
     }
 
-}).catch(function (erro) {
-    console.log(erro);
-})
+    setInterval(function () {
+        mudanca_tela_login()
+    }, 3000);
 
 
-}
-}
+
+
+
+
+
+
+
+    function entrar() {
+
+        var emailVar = container_email.value;
+        var senhaVar = container_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            alert('Preencha todos os campos')
+        }
+        else {
+
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
+
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+
+
+
+                        setTimeout(function () {
+                            window.location.assign("titulo.html")
+                        }, 1000); // apenas para exibir o loading
+
+                    });
+
+                } else {
+
+                    alert("Houve um erro ao tentar realizar o login!");
+
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                    });
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+        }
+    }
+
+
 
 </script>

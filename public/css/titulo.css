@@ -59,23 +59,24 @@ button{
  justify-content: center;
  width: 100%;
  justify-content: space-between;
- margin-left:1vw;
  
     
 }
 #mostrar{
     margin-top:1vw;
+
 }
 
 .votar{
 width:5vw;
 height: 2vw;
-margin-left:0.8vw;
+margin-left:0.5vw;
 margin-top:-0.5vw
 
 }
 .card{
 margin-top:2vw;
+margin-left:0.9vw;
 
 
 }

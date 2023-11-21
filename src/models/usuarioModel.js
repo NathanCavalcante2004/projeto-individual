@@ -8,6 +8,15 @@ function autenticar(email, senha) {
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
+ 
+function pegarVotacao(idJogador) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function pegarVotacao(): ", idJogador)
+    var instrucao = `
+    select qtdVotos from jogadorFavorito where idJogador = '${idJogador}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
 
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucao
 function cadastrar(nome,idade,email,senha,cep) {
@@ -22,7 +31,22 @@ function cadastrar(nome,idade,email,senha,cep) {
     return database.executar(instrucao);
 }
 
+
+
+function votar(qtdVotos, idJogador) {
+    Number(qtdVotos);
+    var votosAtual = qtdVotos + 1
+    var instrucao = `
+        update jogadorFavorito set qtdVotos = '${votosAtual}' where idJogador = '${idJogador}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    votar,
+    pegarVotacao
 };
