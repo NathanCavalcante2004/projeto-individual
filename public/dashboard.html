@@ -11,18 +11,17 @@
 
 
 
+  <img  class="container_santos" src="image/Santos_Logo.png">
   <div class="container_pai">
         
     <div class="div_lista">
         
         <ul class="container_lista">
-            <img  class="container_santos" src="image/Santos_Logo.png">
             <li><a href="sobre.html">Sobre</a></li>
             <li><a href="contato.html">Contato</a></li>
             <li><a href="peleteste.html">Pelé </a></li>
             <li><a href="historia.html">Historia</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="index.html">finalizar Sessao</a></li>
         </ul>
         <div id="container_time">
 
@@ -33,13 +32,13 @@
     </div>
 </head>
 
-<body onload="cadastros()">
+<h2>Análise dos Gráficos</h2>
+<body onload="cadastros() ">
   
-  <h2>Análise dos Gráficos</h2>
   <div class="content">
     <div class='container_pai'>
       <div class="graf" id='container_grafico'>
-        <canvas id="myChart2" style="position: relative;width: 40vw; height: 40vh;"></canvas>
+        <canvas id="myChart2" canvas>
       </div>
 
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -48,8 +47,10 @@
   </div>
 
 </div>
+<div class="fundoPreto">
 
-<div id="sla"></div>
+  <div id="sla"></div>
+</div>
 </body>
 
 </html>
@@ -60,7 +61,7 @@
 fetch("/usuarios/cadastros")
 .then(function(resposta){
   resposta.json().then(json=>{
-    sla.innerHTML=  json[0].quantidade
+    sla.innerHTML= `usuarios que ja logaram: ${json[0].quantidade}`
     console.log(json)
   }
   )
@@ -97,7 +98,7 @@ fetch("/usuarios/cadastros")
           data: {
             labels: [ 'Adriano', 'Arouca', 'Danilo', 'Durval', 'EduDracena', 'Elano', 'Ganso', 'Leo', 'Neymar', 'zeLove'],
             datasets: [{
-              label: '# of Votes',
+              label: 'votos Jogador Favorito',
               data: [qtdVotosAdriano, qtdVotosArouca,qtdVotosDanilo,qtdVotosDurval,qtdVotosEduDracena,qtdVotosElano,qtdVotosGanso,qtdVotosLeo,qtdVotosNemyar,qtdVotosZeLove],
               borderWidth: 1
 
