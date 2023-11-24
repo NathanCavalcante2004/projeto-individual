@@ -50,7 +50,7 @@ function cadastros(req,res){
     usuarioModel.cadastros()
     .then(
         function(resultadoCadastros){
-            res.json(resultadocadastros);
+            res.json(resultadoCadastros);
         }
     ).catch(
         function (erro){

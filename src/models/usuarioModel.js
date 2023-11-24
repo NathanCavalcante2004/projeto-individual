@@ -50,7 +50,7 @@ function listar(){
 }
 function cadastros(){
     var instrucao =`
-    select count(idUsuario) from usuario;`
+    select count(idUsuario) as quantidade from usuario;`
     return database.executar(instrucao);
 }
 

@@ -23,7 +23,7 @@ router.get("/listar", function (req, res) {
     usuarioController.listar(req, res);
 });
 router.get("/cadastros", function (req, res) {
-    usuarioController.listar(req, res);
+    usuarioController.cadastros(req, res);
 });
 
 

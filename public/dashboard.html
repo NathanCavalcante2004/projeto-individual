@@ -11,11 +11,30 @@
 
 
 
+  <div class="container_pai">
+        
+    <div class="div_lista">
+        
+        <ul class="container_lista">
+            <img  class="container_santos" src="image/Santos_Logo.png">
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="peleteste.html">Pelé </a></li>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+        <div id="container_time">
 
+        </div>
+    </div>
+    <div class="container_texto">
+    
+    </div>
 </head>
 
-<body>
-  <a href="index.html"><img onclick="clicar()"class="container_santos" src="image/Santos_Logo.png"></a>
+<body onload="cadastros()">
+  
   <h2>Análise dos Gráficos</h2>
   <div class="content">
     <div class='container_pai'>
@@ -30,6 +49,7 @@
 
 </div>
 
+<div id="sla"></div>
 </body>
 
 </html>
@@ -37,11 +57,15 @@
 <script>
   
   function cadastros(){
-
-
-
-
-
+fetch("/usuarios/cadastros")
+.then(function(resposta){
+  resposta.json().then(json=>{
+    sla.innerHTML=  json[0].quantidade
+    console.log(json)
+  }
+  )
+}
+)
     
   }
    

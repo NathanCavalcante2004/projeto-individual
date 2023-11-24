@@ -1,3 +1,20 @@
+
+.container_lista{
+    width:80%;
+    height: 15vh;
+    color:white;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-size: 1.2vw;
+    list-style-type:none;
+    justify-content:space-between;
+    margin-left:30vw;
+}
+a{
+    text-decoration: none;
+}
+
 .container_pai{
     width:60vw;
 }
