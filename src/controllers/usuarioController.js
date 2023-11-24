@@ -3,16 +3,16 @@ var usuarioModel = require("../models/usuarioModel");
 function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
-
+    
     usuarioModel.autenticar(email, senha)
-        .then(
+    .then(
             function (resultadoAutenticar) {
                 console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
                 console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
-
+                
                 if (resultadoAutenticar.length == 1) {
                     console.log(resultadoAutenticar);
-
+                    
                     if (resultadoAutenticar.length == 1) {
                         console.log(resultadoAutenticar);
                         res.json(resultadoAutenticar[0]);
@@ -22,8 +22,9 @@ function autenticar(req, res) {
                 } else {
                     res.status(403).send("Mais de um usuário com o mesmo login e senha!");
                 }
-
+                
             }
+            
         ).catch(
             function (erro) {
                 console.log(erro);
@@ -31,6 +32,31 @@ function autenticar(req, res) {
                 res.status(500).json(erro.sqlMessage);
             }
         );
+}
+function listar(req,res){
+    usuarioModel.listar()
+    .then(
+        function(resultadoListar){
+            res.json(resultadoListar);
+        }
+    ).catch(
+        function (erro){
+            res.status(500).json(erro.sqlMessage);
+        }
+    )
+}
+
+function cadastros(req,res){
+    usuarioModel.cadastros()
+    .then(
+        function(resultadoCadastros){
+            res.json(resultadocadastros);
+        }
+    ).catch(
+        function (erro){
+            res.status(500).json(erro.sqlMessage);
+        }
+    )
 }
 
 function pegarVotacao(req, res) {
@@ -84,7 +110,6 @@ function votar(req, res) {
 }
 
 
-
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer
@@ -119,5 +144,7 @@ module.exports = {
     autenticar,
     cadastrar,
     votar,
-    pegarVotacao
+    pegarVotacao,
+    listar,
+    cadastros
 }

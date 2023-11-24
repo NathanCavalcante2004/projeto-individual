@@ -1,12 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="icon" href="image/Santos_Logo.png">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/dash.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Dash</title>
+
+
+
+
 </head>
+
 <body>
-    
+  <a href="index.html"><img onclick="clicar()"class="container_santos" src="image/Santos_Logo.png"></a>
+  <h2>Análise dos Gráficos</h2>
+  <div class="content">
+    <div class='container_pai'>
+      <div class="graf" id='container_grafico'>
+        <canvas id="myChart2" style="position: relative;width: 40vw; height: 40vh;"></canvas>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </div>
+
+  </div>
+
+</div>
+
 </body>
+
 </html>
+
+<script>
+  
+  function cadastros(){
+
+
+
+
+
+    
+  }
+   
+
+
+
+
+  fetch("/usuarios/listar")
+    .then(function (resposta) {
+
+      resposta.json().then(json => {
+        var qtdVotosAdriano = json[0].qtdVotos;
+        var qtdVotosArouca = json[1].qtdVotos;
+        var qtdVotosDanilo = json[2].qtdVotos;
+        var qtdVotosDurval = json[3].qtdVotos;
+        var qtdVotosEduDracena = json[4].qtdVotos;
+        var qtdVotosElano = json[5].qtdVotos;
+        var qtdVotosGanso = json[6].qtdVotos;
+        var qtdVotosLeo = json[7].qtdVotos;
+        var qtdVotosNemyar = json[8].qtdVotos;
+        var qtdVotosZeLove = json[9].qtdVotos;
+        
+        
+
+        const ctx2 = document.getElementById('myChart2');
+
+        new Chart(ctx2, {
+          type: 'bar',
+          data: {
+            labels: [ 'Adriano', 'Arouca', 'Danilo', 'Durval', 'EduDracena', 'Elano', 'Ganso', 'Leo', 'Neymar', 'zeLove'],
+            datasets: [{
+              label: '# of Votes',
+              data: [qtdVotosAdriano, qtdVotosArouca,qtdVotosDanilo,qtdVotosDurval,qtdVotosEduDracena,qtdVotosElano,qtdVotosGanso,qtdVotosLeo,qtdVotosNemyar,qtdVotosZeLove],
+              borderWidth: 1
+
+            }]
+
+          },
+
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+
+
+
+      });
+
+    }
+
+    ).catch(function (erro) {
+      console.log(erro);
+    })
+
+
+
+
+  const ctx2 = document.getElementById('myChart2');
+
+  new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: ['rafael', 'leo', 'eduDracena', 'durval', 'danilo', 'arouca', 'elano', 'ganso', 'adriano', 'neymar', 'zeLove'],
+      datasets: [{
+        label: '# of Votes',
+        data: [],
+        borderWidth: 1
+
+      }]
+
+    },
+
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+</script>
+
+<div>
+  <canvas id="myChart2"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</script>

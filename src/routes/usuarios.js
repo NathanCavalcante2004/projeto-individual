@@ -19,5 +19,12 @@ router.get("/pegarVotacao/:idJogadorVar", function (req, res) {
 router.post("/votar", function (req, res) {
     usuarioController.votar(req, res);
 });
+router.get("/listar", function (req, res) {
+    usuarioController.listar(req, res);
+});
+router.get("/cadastros", function (req, res) {
+    usuarioController.listar(req, res);
+});
+
 
 module.exports = router;

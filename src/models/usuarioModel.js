@@ -38,8 +38,19 @@ function votar(qtdVotos, idJogador) {
     var votosAtual = qtdVotos + 1
     var instrucao = `
         update jogadorFavorito set qtdVotos = '${votosAtual}' where idJogador = '${idJogador}';
+    
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+function listar(){
+    var instrucao =`
+    select * from jogadorFavorito order by nome;`
+    return database.executar(instrucao);
+}
+function cadastros(){
+    var instrucao =`
+    select count(idUsuario) from usuario;`
     return database.executar(instrucao);
 }
 
@@ -48,5 +59,7 @@ module.exports = {
     autenticar,
     cadastrar,
     votar,
-    pegarVotacao
+    pegarVotacao,
+    listar,
+    cadastros
 };

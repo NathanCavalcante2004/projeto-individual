@@ -1,25 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
 body{
-    background-image: url("../image/liberta.jpg");
+    background-image: url("../image/liberta.jpg"); 
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
 }
 
 .container_pai{
     display: flex;
     align-items: center;
     justify-content: center;
-    width:20%;
-    height: 80vh;
+    width:25%;
+    height: 85vh;
 }
 .container_filho{
-    border:solid 0.5vw;
-    width:150%;
-    height: 60vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+   width: 80vw;
+   height: 50vh;
+   background-color: black;
+   opacity: 0.9;
+   border-radius:50px;
+ 
 }
 ul{
     list-style: none;
 }
 button{
     display: flex;
+}
+li{
+    color:white;
+}
+input{
+    width:13vw;
+    height: 2.5vh;
+}
+button{
+    width: 13vw;
+    height: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1vw;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    
+}
+li{
+    font-size: 1.3vw;
+}
+.cadastrar{
+    font-size:1vw;
+    margin-top:1vw;
+}
+a{
+    text-decoration: none;
+    color:white;
 }

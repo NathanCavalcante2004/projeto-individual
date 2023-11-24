@@ -23,6 +23,9 @@
     <div id="alertas"></div>
     <div class="container_funcional">
         <a href="index.html"><img onclick="clicar()" class="container_santos" src="image/Santos_Logo.png"></a>
+        <div class="user">
+            <h3>Bem vindo, <b id="b_usuario"></b></h3>
+        </div>  
         <p>Pesquise Uma Posição</p>
         <input id="container_input">
         <button onclick="resultado()">Jogador</button>
@@ -86,6 +89,7 @@
             mostrar.innerHTML = `<img src=${jogadores[11]} width="200px" height= "200px">`
         }
         else { alert('essa posição nao existe') }
+         b_usuario.innerHTML = nome;
     }
 
     function elenco() {
@@ -123,7 +127,8 @@
 
         setTimeout(() => {
             votar(contador, naosei);    
-        }, 100);
+            window.location = "dashboard.html";
+        }, 3000);
     }
 
         function votar(idJogador, naosei) {
@@ -169,4 +174,5 @@
                 })
             }    
 }
+
 </script>
