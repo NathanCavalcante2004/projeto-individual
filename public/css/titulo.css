@@ -63,12 +63,43 @@ button{
  justify-content: center;
  width: 100%;
  justify-content: space-between;
+ margin-top:-3vw;
  
     
 }
 #mostrar{
-    margin-top:1vw;
+    margin-top:-6vw;
 
+}
+.jogadorP{
+    color:white;
+    margin-top:6vw;
+    margin-left:3vw;
+    font-size: 1.8vw;
+
+}
+#nomeJogador{
+    color: white;
+    display: flex;
+}
+.jogadorV{
+    display: flex;
+    width: 80%;
+    margin-left:-7vw;
+    list-style-type: none;
+ 
+
+}
+li{
+    margin-left: 5.3vw;
+    margin-top:-2vw;
+}
+#paragrafo{
+    font-size:1.5vw;
+    margin-top:3vw;
+    margin-left:4vw;
+    
+    width:50vw;
 }
 
      .user{
@@ -86,7 +117,7 @@ button{
 .votar{
 width:5vw;
 height: 2vw;
-margin-left:0.5vw;
+margin-left:0.8vw;
 margin-top:-0.5vw
 
 }
@@ -96,4 +127,3 @@ margin-left:0.9vw;
 
 
 }
-

@@ -31,12 +31,15 @@
         <button onclick="resultado()">Jogador</button>
         <button onclick="elenco()">elenco</button>
         <div id="mostrar"></div>
+        <div id="paragrafo"></div>
+        <div id="nomeJogador"></div>
         <div id="outro"></div>
 
     </div>
 </body>
 
 </html>
+
 
 <script>
     var jogadores = ["null", "image/goleiro.jpg","image/lateralDireito.jpg", "image/leo.jpg", "image/eedu.jpg", "image/durval.jpg", "image/arouca.jpg", "image/elano.jpg", "image/ganso.jpg", "image/adriano.webp", "image/ney.jpg", "image/zelove.jpg"]
@@ -50,53 +53,66 @@
         }
 
         if (input == "lateral direito") {
-            mostrar.innerHTML = `<img src=${jogadores[2]} width="200px" height= "200px">`
+            mostrar.innerHTML = ` <p class="jogadorP">Danilo</p> <img src=${jogadores[2]} width="200px" height= "200px">`
         }
 
         else if (input == "lateral esquerdo") {
-            mostrar.innerHTML = `<img src=${jogadores[3]} width="200px" height= "200px">`
+            mostrar.innerHTML = `<p class="jogadorP">Leo</p>  <img src=${jogadores[3]} width="200px" height= "200px">`
         }
 
         else if (input == "zagueiro esquerdo") {
-            mostrar.innerHTML = `<img src=${jogadores[4]} width="200px" height= "200px">`
+            mostrar.innerHTML = `<p class="jogadorP">EduDracena</p>  <img src=${jogadores[4]} width="200px" height= "200px">`
         }
 
         else if (input == "zagueiro direito") {
-            mostrar.innerHTML = `<img src=${jogadores[5]} width="200px" height= "200px">`
+            mostrar.innerHTML = `<p class="jogadorP">Durval</p><img src=${jogadores[5]} width="200px" height= "200px">`
         }
 
         else if (input == "volante") {
-            mostrar.innerHTML = `<img src=${jogadores[6]} width="200px" height= "200px">`
+            mostrar.innerHTML = `<p class="jogadorP">arouca</p><img src=${jogadores[6]} width="200px" height= "200px">`
         }
 
         else if (input == "segundo volante") {
-            mostrar.innerHTML = `<img src=${jogadores[7]} width="200px" height= "200px">`
+            mostrar.innerHTML = `<p class="jogadorP">Elano</p><img src=${jogadores[7]} width="200px" height= "200px">`
         }
 
         else if (input == "meia atacante") {
-            mostrar.innerHTML = `<img src=${jogadores[8]} width="200px" height= "200px">`
+            mostrar.innerHTML = `<p class="jogadorP">Ganso</p><img src=${jogadores[8]} width="200px" height= "200px">`
         }
 
         else if (input == "meio") {
-            mostrar.innerHTML = `<img src=${jogadores[9]} width="200px" height= "200px">`
+            mostrar.innerHTML = `<p class="jogadorP">Adriano</p><img src=${jogadores[9]} width="200px" height= "200px">`
         }
 
         else if (input == "atacante") {
-            mostrar.innerHTML = `<img src=${jogadores[10]} width="200px" height= "200px">`
+            mostrar.innerHTML = `<p class="jogadorP">Neymar</p><img src=${jogadores[10]} width="200px" height= "200px">`
         }
 
         else if (input == "centroavante") {
-            mostrar.innerHTML = `<img src=${jogadores[11]} width="200px" height= "200px">`
+            mostrar.innerHTML = `<p class="jogadorP">Zelove</p><img src=${jogadores[11]} width="200px" height= "200px">`
         }
         else { alert('essa posição nao existe') }
-         b_usuario.innerHTML = nome;
     }
 
     function elenco() {
         outro.innerHTML = ``
+        paragrafo.innerHTML =`<p class="paragrafoVotar">vote no seu jogador favorito</p>`
+        nomeJogador.innerHTML=`<ul class="jogadorV">
+    <li>rafael</li>
+    <li>danilo</li>
+    <li>leo</li>
+    <li>eduDracena</li>
+    <li>durval</li>
+    <li>arouca</li>
+    <li>elano</li>
+    <li>ganso</li>
+    <li>adriano</li>
+    <li>neymar</li>
+    <li>zeLove</li>
+</ul>`
         for (var contador = 1; contador <= 11; contador++) {
             outro.innerHTML += `<div class="card"><img src=${jogadores[contador]} width="100px" height= "100px">
-            <button id="mensagem" onclick="agoraVai(${contador})"class="votar">votar</button></div>`
+            <button id="mensagem" onclick="agoraVai(${contador})"class="votar">votar </button></div>`
         }
     }
 
