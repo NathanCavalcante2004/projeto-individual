@@ -21,8 +21,10 @@
         </div>
     </div>
     <div id="alertas"></div>
+    <div id="nome"></div>
     <div class="container_funcional">
         <a href="index.html"><img onclick="clicar()" class="container_santos" src="image/Santos_Logo.png"></a>
+        
         <div class="user">
             <!-- <h3>Bem vindo, <b id="b_usuario"></b></h3> -->
         </div>  
@@ -42,6 +44,7 @@
 
 
 <script>
+    nome.innerHTML= `olá `  +  sessionStorage.NOME_USUARIO;
     var jogadores = ["null", "image/goleiro.jpg","image/lateralDireito.jpg", "image/leo.jpg", "image/eedu.jpg", "image/durval.jpg", "image/arouca.jpg", "image/elano.jpg", "image/ganso.jpg", "image/adriano.webp", "image/ney.jpg", "image/zelove.jpg"]
 
     function resultado() {
