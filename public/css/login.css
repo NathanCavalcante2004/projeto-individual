@@ -10,22 +10,25 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    width:25%;
+    width:99%;
     height: 85vh;
 }
 .container_filho{
     display: flex;
     align-items: center;
-    justify-content: start;
-   width: 80vw;
+    justify-content: center;
+   width: 25vw;
    height: 50vh;
    background-color: black;
    opacity: 0.9;
    border-radius:50px;
  
+ 
 }
 ul{
+    margin-left:-2.5vw;
     list-style: none;
+ 
 }
 button{
     display: flex;
