@@ -119,7 +119,7 @@
         }
     }
 
-    var naosei = null;
+    var pegarDados = null;
 
     function pegarVotacao(idJogador) {
         var idJogadorVar = idJogador;
@@ -130,7 +130,7 @@
             resposta.json().then((historicos) => {
                     historicos.forEach((dados) => {
                     
-                        naosei = dados.qtdVotos;
+                        pegarDados = dados.qtdVotos;
                     });
                 });
         }).catch(function (erro) {
@@ -145,16 +145,16 @@
         pegarVotacao(contador);
 
         setTimeout(() => {
-            votar(contador, naosei);    
+            votar(contador, pegarDados);    
             window.location = "dashboard.html";
         }, 3000);
     }
 
-        function votar(idJogador, naosei) {
+        function votar(idJogador, pegarDados) {
           
-            console.log((naosei));
+            console.log((pegarDados));
 
-            var qtdVotosVar = naosei;
+            var qtdVotosVar = pegarDados;
             var idJogadorVar = idJogador;
 
            var oi = Number(qtdVotosVar);
